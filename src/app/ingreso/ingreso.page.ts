@@ -66,7 +66,7 @@ export class IngresoPage implements OnInit {
         return;
       }
   
-      this.mostrarMensaje('¡Bienvenido!');
+      this.mostrarMensaje('Bienvenido ' + this.usuario.nombre);
   
       /*
         Se declara e instancia un objeto de la clase NavigationExtras, para poder pasarle
