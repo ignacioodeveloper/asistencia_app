@@ -35,8 +35,9 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Los datos del Código QR son los siguientes:</ion-card-title>
+      <h3>Datos: </h3>
     </ion-card-header>
+
     <ion-card-content class="borde">
       <h2 *ngIf="datosQR">
         {{ datosQR }}
@@ -46,6 +47,14 @@
       </h2>
     </ion-card-content>
   </ion-card>
+
+
   
+
+    <ion-button (click)="cerrarSesion()" class="ion-padding ion-bottom" color="danger" expand="full" shape="round">
+      <ion-icon slot="start" name="log-out-outline"></ion-icon>
+      Cerrar Sesion
+    </ion-button>
+
 </ion-content>
 

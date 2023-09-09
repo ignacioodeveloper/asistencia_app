@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, IonicSafeString } from '@ionic/angular';
 import { Persona } from 'src/app/model/persona';
 import { Animation, AnimationController} from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +31,9 @@ export class HomePage {
   public datosQR: string = '';
 
   constructor(
-    private activeroute: ActivatedRoute
+    private navCtrl: NavController
+  
+  , private activeroute: ActivatedRoute
   , private router: Router
   , private alertController: AlertController
   , private animationController: AnimationController
@@ -55,6 +58,12 @@ export class HomePage {
       this.router.navigate(['/login']);
     }
   });
+  }
+
+  cerrarSesion() {
+
+    // navega al inicio de sesión (página "ingreso" en este caso)
+    this.navCtrl.navigateRoot('/ingreso'); // Asegúrate de que '/ingreso' sea la ruta correcta
   }
 
   public ngOnInit(): void {
