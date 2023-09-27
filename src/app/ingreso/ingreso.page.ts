@@ -102,7 +102,7 @@ export class IngresoPage implements OnInit {
         return true;
       }
       else {
-        this.mostrarMensaje('Las credenciales no son correctas!');
+        this.mostrarMensaje('La información de inicio de sesión es incorrecta.');
         return false;
       }
     }

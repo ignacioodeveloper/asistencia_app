@@ -1,44 +1,34 @@
-<ion-header [translucent]="true" id="mi-pagina">
-</ion-header>
 
-<ion-content [fullscreen]="true" id="mi-pagina">
-  <ion-header collapse="condense">
-  </ion-header>
 
-  <div id="style-logo-duoc">
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <div class="ion-padding">
     <ion-img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"></ion-img>
+
   </div>
-  <ion-card id="subtitulo" style="color: #FFFFFF;">
-    "Bienvenido al nuevo sistema de asistencia DuocUC"
+
+  <ion-card color="light" class="ion-padding" >
+    <ion-card-title color="tertiary" class="ion-text-center ion-padding">¡Bienvenido al nuevo sistema de asistencia!</ion-card-title>
+    
+    <ion-item>
+      <ion-input label="Correo" class="ion-padding" [(ngModel)]="usuario.correo"  type="text" labelPlacement="floating" placeholder="alumno@duocuc.cl"></ion-input>
+
+    </ion-item>
+
+
+    <ion-item>
+      <ion-input label="Contraseña" class="ion-padding" [(ngModel)]="usuario.password" type="password" labelPlacement="floating" placeholder="Ingrese su contraseña"></ion-input>
+
+    </ion-item>
+
+    <ion-button (click)="ingresar()" class="ion-padding" color="tertiary"  expand="block">Ingresar</ion-button>
+
+    <ion-card-subtitle 
+    (click)="ingresarPaginaValidarCorreo()" 
+    class="ion-text-center ion-padding" color="tertiary">¿Olvidaste tu contraseña?</ion-card-subtitle>
+
+
   </ion-card>
 
-
-
-  <div class="caja-login">
-    <ion-card>
-      <ion-card-content>
-        <ion-list>
-          <ion-item>
-            <ion-label class="prop-texto" position="floating">Correo</ion-label>
-            <ion-input type="text" [(ngModel)]="usuario.correo"  ></ion-input>
-          </ion-item>
-
-          <ion-item>
-            <ion-label class="prop-texto" position="floating">Contraseña</ion-label>
-            <ion-input type="password" [(ngModel)]="usuario.password"></ion-input>
-          </ion-item>
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-button class="prop-boton" (click)="ingresar()" expand ="full">Ingresar</ion-button>
-  </div>
-
-  <hr class="linea-separacion">
-  <br>
-  <ion-text id="prop-olv-contraseña">
-    <ion-chip (click)="ingresarPaginaValidarCorreo()" color="dark">¿Olvidaste tu contraseña?</ion-chip>
-  </ion-text>
 
 
 </ion-content>
