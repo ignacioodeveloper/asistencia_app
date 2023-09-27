@@ -1,13 +1,29 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>correo</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <div class="ion-padding">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"></ion-img>
 
-<ion-content>
-  <ion-card>
-    <ion-card-subtitle>Ingresa tu correo</ion-card-subtitle>
-    <ion-input type="text" [(ngModel)]="correo" placeholder="Ingresa tu correo"></ion-input>
-    <a (click)="ingresarPaginaValidarRespuestaSecreta()">Recuperar contraseña</a>
+  </div>
+
+  <ion-card color="light" class="ion-padding" >
+    <ion-card-title color="tertiary" 
+    class="ion-text-center ion-padding">Olvidaste tu contraseña?</ion-card-title>
+    
+    <ion-item>
+      <ion-input label="Ingresa tu Correo para Continuar" class="ion-padding" [(ngModel)]="correo"  type="text" labelPlacement="floating" placeholder="alumno@duocuc.cl"></ion-input>
+
+    </ion-item>
+
+
+
+
+    <ion-button (click)="ingresarPaginaValidarRespuestaSecreta()"class="ion-padding" color="tertiary"  expand="block">Continuar</ion-button>
+
+
+
   </ion-card>
+
+
+
 </ion-content>
+
+

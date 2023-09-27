@@ -1,15 +1,30 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>pregunta</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
-  <ion-content>
-    <ion-card>
-      <ion-card-subtitle>Ingresa tu respuesta</ion-card-subtitle>
-      <ion-input type="text" [(ngModel)]="respuesta" placeholder="Ingresa tu correo"></ion-input>
-      <a (click)="validarRespuestaSecreta()">Recuperar contraseña</a>
-    </ion-card>
-  </ion-content>
+
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <div class="ion-padding">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"></ion-img>
+
+  </div>
+
+  <ion-card color="light" class="ion-padding" >
+    <ion-card-title color="tertiary" 
+    class="ion-text-center ion-padding">Responde la Pregunta Secreta</ion-card-title>
+    
+    <ion-item>
+      <ion-input label="Ingresa tu Respuesta" class="ion-padding" [(ngModel)]="respuesta"  type="text" labelPlacement="floating" placeholder="Respuesta"></ion-input>
+
+    </ion-item>
+
+
+
+
+    <ion-button (click)="validarRespuestaSecreta()" class="ion-padding" color="tertiary"  expand="block">Ver Contraseña</ion-button>
+
+
+
+  </ion-card>
+
+
+
 </ion-content>
+
