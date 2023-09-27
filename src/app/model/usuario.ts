@@ -35,6 +35,17 @@ export class Usuario {
       return null;
     }
   }
+  public buscarUsuarioPorCorreo(correo: string): Usuario | undefined {
+    const usuario = this.listaUsuariosValidos().find(
+      usu => usu.correo === correo
+    );
+    if (!usuario) {
+      // Devuelve undefined si no se encuentra el usuario
+      return undefined;
+    }
+    return usuario;
+  }
+  
 
   public validarcorreo(): string {
     if (this.correo.trim() === '') {

@@ -59,7 +59,9 @@ export class IngresoPage implements OnInit {
       //this.ingresar();
     }
   
-   
+    public ingresarPaginaValidarCorreo(): void {
+      this.router.navigate(['/correo']);
+    }
     public ingresar(): void {
   
       if(!this.validarUsuario(this.usuario)) {
