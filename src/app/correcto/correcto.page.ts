@@ -1,4 +1,7 @@
+import { Usuario } from 'src/app/model/usuario';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-correcto',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./correcto.page.scss'],
 })
 export class CorrectoPage implements OnInit {
+  public usuario: Usuario = new Usuario('', '', '', '', '');
 
-  constructor() { }
+  constructor(
+    private navCtrl: NavController
+
+    , private activeroute: ActivatedRoute
+    , private router: Router
+  ) { }
 
   ngOnInit() {
+    this.usuario.password = '1234';
+  }
+  public regresarLogin(): void {
+    this.router.navigate(['/ingreso']);
   }
 
 }

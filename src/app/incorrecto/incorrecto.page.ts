@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-incorrecto',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IncorrectoPage implements OnInit {
 
-  constructor() { }
 
   ngOnInit() {
+  }
+  constructor(private router: Router) { }
+
+
+  public regresarLogin(): void {
+    this.router.navigate(['/ingreso']);
   }
 
 }

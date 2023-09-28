@@ -1,13 +1,29 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>correcto</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <div class="ion-padding">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"></ion-img>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">correcto</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  </div>
+
+  <ion-card color="light" class="ion-padding" >
+    <img alt="Silhouette of mountains" src="https://w7.pngwing.com/pngs/609/862/png-transparent-person-girl-happy-microphone-hand-arm.png" />
+
+    <ion-card-title color="tertiary"
+    class="ion-text-center ion-padding">Correcto tu Contraseña es: {{ usuario.password }} </ion-card-title>
+
+
+
+
+
+    <ion-card-subtitle
+    (click)="regresarLogin()"
+    class="ion-text-center ion-padding" color="tertiary">Volver a Iniciar Sesion</ion-card-subtitle>
+
+
+  </ion-card>
+
+
+
+
+
 </ion-content>
+
