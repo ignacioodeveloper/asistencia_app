@@ -42,4 +42,9 @@ export class PreguntaPage implements OnInit {
     }
   }
 
+  public regresarCorreo(): void {
+    this.router.navigate(['/correo']);
+  }
+
+
 }

@@ -31,7 +31,9 @@ export class CorreoPage implements OnInit {
       this.router.navigate(['/pregunta'], navigationExtras);
     }
   }
-
+  public regresarLogin(): void {
+    this.router.navigate(['/ingreso']);
+  }
 
 
 }
