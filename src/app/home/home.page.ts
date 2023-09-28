@@ -17,7 +17,7 @@ export class HomePage {
   @ViewChild('nombre', { read: ElementRef }) itemNombre!: ElementRef;
 
   public usuario: Usuario = new Usuario('', '', '', '', '');
-  
+
   public persona: Persona = new Persona();
 
   @ViewChild('video')
@@ -30,9 +30,20 @@ export class HomePage {
   public escaneando = false;
   public datosQR: string = '';
 
+  public bloqueInicio: number = 0;
+  public bloqueTermino: number = 0;
+  public dia : string = '';
+  public horaFin: string = '';
+  public horaInicio: string = '';
+  public idAsignatura: string = '';
+  public nombreAsignatura: string = '';
+  public nombreProfesor: string = '';
+  public seccion:  string = '';
+  public sede: string = '';
+
   constructor(
     private navCtrl: NavController
-  
+
   , private activeroute: ActivatedRoute
   , private router: Router
   , private alertController: AlertController
@@ -86,10 +97,10 @@ export class HomePage {
   // Luego se cofigurará:
   //     this.video.nativeElement.setAttribute('playsinline', 'true');
   // que permite que el video se reproduzca dentro del contexto de la página, en lugar de
-  // cambiar automáticamente al modo de pantalla completa en dispositivos iOS. 
-  // Esto sirve para proporcionar una experiencia de usuario más fluida y evitar 
+  // cambiar automáticamente al modo de pantalla completa en dispositivos iOS.
+  // Esto sirve para proporcionar una experiencia de usuario más fluida y evitar
   // interrupciones al reproducir videos en el sitio web. Luego se iniciará el proceso de
-  // escaneo indicándolo por medio de la variable "this.escaneando = true;" y se podrá detener 
+  // escaneo indicándolo por medio de la variable "this.escaneando = true;" y se podrá detener
   // el escaneo por medio del botón de "Detener" que cambia a "this.escaneando = false;" o bien
   // si la cámara detecta un código QR.
 
@@ -106,7 +117,7 @@ export class HomePage {
 
   // Las imágenes de la cámara se analizan muchas veces, hasta que logre encontrar un Código QR,
   // por esta razón se usa la función del navegador "requestAnimationFrame", que permite realizar
-  // actualizaciones de la interfaz de usuario de manera eficiente y sincronizada con los 
+  // actualizaciones de la interfaz de usuario de manera eficiente y sincronizada con los
   // refrescos de la pantalla. Entonces, en cada refresco de pantalla el programa realizará una
   // pequeña pausa para analizar si el fotograma capturado es o no un Código QR, por medio de
   // la función this.obtenerDatosQR().
@@ -122,12 +133,12 @@ export class HomePage {
 
   // Si "obtenerDatosQR" encuentra un QR válido entonces se mostrarán los datos en pantalla
   // y se devolverá true para detener el escaneo. En caso contrario, mientras no se detecte
-  // un QR, la función "obtenerDatosQR" devolverá false y el método "verificarVideo" se 
+  // un QR, la función "obtenerDatosQR" devolverá false y el método "verificarVideo" se
   // volverá a ejecutar nuevamente.
   // Para analizar la imagen se usan los Elementos HTML: video y canvas. El TAG HTML "video"
-  // sirve para establecer un recuadro en la pantalla donde se visualiza el video de la 
-  // cámara. Cada fotograma de la cámara es redibujado dentro del TAG HTML "canvas", 
-  // de modo que es la imagen del canvas, la que analiza la biblioteca "jsQR". 
+  // sirve para establecer un recuadro en la pantalla donde se visualiza el video de la
+  // cámara. Cada fotograma de la cámara es redibujado dentro del TAG HTML "canvas",
+  // de modo que es la imagen del canvas, la que analiza la biblioteca "jsQR".
 
   public obtenerDatosQR(): boolean {
     const w: number = this.video.nativeElement.videoWidth;
@@ -149,25 +160,18 @@ export class HomePage {
   }
 
   public mostrarDatosQROrdenados(datosQR: string): void {
-    this.datosQR = datosQR;
     const objetoDatosQR = JSON.parse(datosQR);
-    // ----------------------------------
-    // TAREA PARA COMPLETAR POR EL ALUMNO
-    // ----------------------------------
-    // 1) Ejecutar el setter de la clase Asistencia:
-    //     this.asistencia.setAsistencia(...parametros...)
-    //    de modo que los parámetros los tome del objeto datosQR,
-    //    por ejemplo: datosQR.nombreAsignatura contiene el valor 
-    //    del nombre de la asignatura en la cual el alumno
-    //    debe quedar presente.
-    // 2) Hacer una interpolación entre las propiedades 
-    //    de "this.asistencia" y la página HTML, de modo
-    //    que la página muestre de manera ordenada estos datos.
+    this.bloqueInicio = objetoDatosQR.bloqueInicio;
+    this.bloqueTermino = objetoDatosQR.bloqueTermino;
+    this.dia = objetoDatosQR.dia;
+    this.horaFin = objetoDatosQR.horaFin;
+    this.horaInicio = objetoDatosQR.horaInicio;
+    this.idAsignatura = objetoDatosQR.idAsignatura;
+    this.nombreAsignatura = objetoDatosQR.nombreAsignatura;
+    this.nombreProfesor = objetoDatosQR.nombreProfesor;
+    this.seccion = objetoDatosQR.seccion;
+    this.sede = objetoDatosQR.sede;
   }
-
-  // Si la propiedad this.escaneando cambia a false, entonces la función
-  // "verificarVideo" deja de ejecutarse y se detiene el escaneo del QR.
-
   public detenerEscaneoQR(): void {
     this.escaneando = false;
   }

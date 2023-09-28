@@ -6,9 +6,9 @@
 
   </div>
 
-  <ion-card color="light" class="ion-padding" >
+  <ion-card id="tarjeta-menu" color="light" class="ion-padding" >
     <ion-card-title color="tertiary" class="ion-text-center ion-padding">¡Bienvenido al nuevo sistema de asistencia!</ion-card-title>
-    
+
     <ion-item>
       <ion-input label="Correo" class="ion-padding" [(ngModel)]="usuario.correo"  type="text" labelPlacement="floating" placeholder="alumno@duocuc.cl"></ion-input>
 
@@ -22,8 +22,8 @@
 
     <ion-button (click)="ingresar()" class="ion-padding" color="tertiary"  expand="block">Ingresar</ion-button>
 
-    <ion-card-subtitle 
-    (click)="ingresarPaginaValidarCorreo()" 
+    <ion-card-subtitle
+    (click)="ingresarPaginaValidarCorreo()"
     class="ion-text-center ion-padding" color="tertiary">¿Olvidaste tu contraseña?</ion-card-subtitle>
 
 
