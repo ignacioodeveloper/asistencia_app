@@ -35,11 +35,20 @@ export class PreguntaPage implements OnInit {
 
   public validarRespuestaSecreta(): void {
     if (this.usuario.respuestaSecreta === this.respuesta) {
-      alert('CORRECTO!!! TU CLAVE ES ' + this.usuario.password);
+      this.router.navigate(['/correcto']);
+
+      // alert('CORRECTO!!! TU CLAVE ES ' + this.usuario.password);
     }
     else {
-      alert('INCORRECTO!!!');
+      // alert('INCORRECTO!!!');
+      this.router.navigate(['/incorrecto']);
+
     }
   }
+
+  public regresarCorreo(): void {
+    this.router.navigate(['/correo']);
+  }
+
 
 }

@@ -12,12 +12,12 @@
   </div>
 
 
-  <ion-button class="ion-padding" *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="round">
+  <ion-button class="ion-padding"color="tertiary" *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="round">
     <ion-icon slot="start" name="qr-code-outline"></ion-icon>
     Escanear QR
   </ion-button>
 
-  <ion-button class="ion-padding" *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round">
+  <ion-button class="ion-padding" color="tertiary" *ngIf="escaneando" (click)="detenerEscaneoQR()" expand="full" shape="round">
     <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
     Detener escaneo de QR
   </ion-button>
@@ -34,16 +34,55 @@
 
   <ion-card>
     <ion-card-header>
-      <h3>Datos: </h3>
+      <h3>Datos:</h3>
     </ion-card-header>
 
-    <ion-card-content class="borde">
-      <h2 *ngIf="datosQR">
-        {{ datosQR }}
-      </h2>
-      <h2 *ngIf="!datosQR">
-        Sin información
-      </h2>
+    <ion-card-content class="borde" *ngIf="bloqueInicio || bloqueTermino || dia || horaFin || horaInicio || idAsignatura || nombreAsignatura || nombreProfesor || seccion || sede">
+      <table>
+        <tr>
+          <td>Bloque de inicio:</td>
+          <td>{{ bloqueInicio }}</td>
+        </tr>
+        <tr>
+          <td>Bloque de término:</td>
+          <td>{{ bloqueTermino }}</td>
+        </tr>
+        <tr>
+          <td>Día:</td>
+          <td>{{ dia }}</td>
+        </tr>
+        <tr>
+          <td>Hora de término:</td>
+          <td>{{ horaFin }}</td>
+        </tr>
+        <tr>
+          <td>Hora de inicio:</td>
+          <td>{{ horaInicio }}</td>
+        </tr>
+        <tr>
+          <td>Código de asignatura:</td>
+          <td>{{ idAsignatura }}</td>
+        </tr>
+        <tr>
+          <td>Nombre de asignatura:</td>
+          <td>{{ nombreAsignatura }}</td>
+        </tr>
+        <tr>
+          <td>Nombre de Profesor:</td>
+          <td>{{ nombreProfesor }}</td>
+        </tr>
+        <tr>
+          <td>Sección:</td>
+          <td>{{ seccion }}</td>
+        </tr>
+        <tr>
+          <td>Sede:</td>
+          <td>{{ sede }}</td>
+        </tr>
+      </table>
+    </ion-card-content>
+    <ion-card-content *ngIf="!(bloqueInicio || bloqueTermino || dia || horaFin || horaInicio || idAsignatura || nombreAsignatura || nombreProfesor || seccion || sede)">
+      <p>Sin información</p>
     </ion-card-content>
   </ion-card>
 
