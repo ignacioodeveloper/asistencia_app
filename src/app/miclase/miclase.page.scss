@@ -1,0 +1,15 @@
+#img_logo_duoc_prop{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: left; /* Centra verticalmente */
+    height: 4vh; /* Ajusta la altura según tus necesidades */
+    background-color: #00162a;
+    
+  }
+
+
+  #mi-pagina {
+    --background: url('https://upload.wikimedia.org/wikipedia/commons/3/33/Palacio_Eguiguren%2C_Santiago_20210807_36.jpg') 0 0 / cover no-repeat;
+    --background-size: cover;
+    --background-repeat: no-repeat;
+  }

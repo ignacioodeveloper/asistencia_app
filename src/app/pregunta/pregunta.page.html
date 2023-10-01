@@ -1,0 +1,34 @@
+
+
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <div class="ion-padding">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"></ion-img>
+
+  </div>
+
+  <ion-card color="light" class="ion-padding" >
+    <ion-card-title color="tertiary" 
+    class="ion-text-center ion-padding">Responde la Pregunta Secreta</ion-card-title>
+    
+    <ion-item>
+      <ion-input label="Ingresa tu Respuesta" class="ion-padding" [(ngModel)]="respuesta"  type="text" labelPlacement="floating" ></ion-input>
+
+    </ion-item>
+
+
+
+
+    <ion-button (click)="validarRespuestaSecreta()" class="ion-padding" color="tertiary"  expand="block">Ver Contraseña</ion-button>
+    <ion-card-subtitle 
+    (click)="regresarCorreo()" 
+    class="ion-text-center ion-padding" color="tertiary">Volver a ingresar Correo</ion-card-subtitle>
+
+
+
+
+  </ion-card>
+
+
+
+</ion-content>
+
