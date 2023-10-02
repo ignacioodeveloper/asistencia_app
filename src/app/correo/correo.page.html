@@ -4,16 +4,15 @@
 
   </div>
 
-  <ion-card color="light" class="ion-padding" >
+  <ion-card id="tarjeta-menu" color="light" class="ion-padding" >
     <ion-card-title color="tertiary" 
-    class="ion-text-center ion-padding">Olvidaste tu contraseña?</ion-card-title>
+    class="ion-text-center ion-padding">Ingresa tu Correo para recuperar la contraseña</ion-card-title>
     
     <ion-item>
-      <ion-input label="Ingresa tu Correo para Continuar" class="ion-padding" [(ngModel)]="correo"  type="text" labelPlacement="floating" placeholder="alumno@duocuc.cl"></ion-input>
+      <ion-input label="Correo Electronico" class="ion-padding" [(ngModel)]="correo"  type="text" labelPlacement="floating" ></ion-input>
 
     </ion-item>
-
-
+    
 
 
     <ion-button (click)="ingresarPaginaValidarRespuestaSecreta()"class="ion-padding" color="tertiary"  expand="block">Continuar</ion-button>

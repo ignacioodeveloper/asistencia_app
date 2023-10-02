@@ -33,10 +33,16 @@ export class Usuario {
   }
 
 
+
+
   public buscarUsuarioPorCorreo(correo: string): Usuario | undefined  {
     return this.listaUsuariosValidos().find(
       usu => usu.correo === correo);
-    }
+      }
+  public buscarUsuarioPorRespuesta(respuestaSecreta: string): Usuario | undefined  {
+    return this.listaUsuariosValidos().find(
+      usu => usu.respuestaSecreta ===respuestaSecreta);
+      }
 
   public validarcorreo(): string {
     if (this.correo.trim() === '') {

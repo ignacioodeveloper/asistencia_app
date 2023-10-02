@@ -6,12 +6,17 @@
 
   </div>
 
-  <ion-card color="light" class="ion-padding" >
+  <ion-card id="tarjeta-menu" color="light" class="ion-padding" >
+
+
     <ion-card-title color="tertiary" 
     class="ion-text-center ion-padding">Responde la Pregunta Secreta</ion-card-title>
+
+    <h3 color="tertiary" 
+    class="ion-text-center ion-padding">{{ this.usuario.preguntaSecreta }}</h3>
     
     <ion-item>
-      <ion-input label="Ingresa tu Respuesta" class="ion-padding" [(ngModel)]="respuesta"  type="text" labelPlacement="floating" placeholder="Respuesta"></ion-input>
+      <ion-input label="Ingresa tu Respuesta" class="ion-padding" [(ngModel)]="respuestaSecreta"  type="text" labelPlacement="floating"></ion-input>
 
     </ion-item>
 

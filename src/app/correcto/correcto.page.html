@@ -4,19 +4,21 @@
 
   </div>
 
-  <ion-card color="light" class="ion-padding" >
-    <img alt="Silhouette of mountains" src="https://w7.pngwing.com/pngs/609/862/png-transparent-person-girl-happy-microphone-hand-arm.png" />
+  <ion-card id="tarjeta-menu"  color="light" class="ion-padding" >
+    <ion-card-title color="tertiary" 
+    class="ion-text-center ion-padding">¡Correcto!</ion-card-title>
+    
+    <img alt="Silhouette of mountains" src="https://img.freepik.com/premium-photo/young-handsome-man-feeling-proud-smiling-positively-with-thumbs-up-university-student-concept_1194-317271.jpg" />
 
-    <ion-card-title color="tertiary"
-    class="ion-text-center ion-padding">Correcto tu Contraseña es: {{ usuario.password }} </ion-card-title>
+    <h1 color="tertiary" 
+    class="ion-text-center ion-padding">Tu Contraseña es: {{ this.usuario.password }} </h1>
 
 
 
 
 
-    <ion-card-subtitle
-    (click)="regresarLogin()"
-    class="ion-text-center ion-padding" color="tertiary">Volver a Iniciar Sesion</ion-card-subtitle>
+    
+    <ion-button (click)="regresarLogin()" class="ion-padding" color="tertiary"  expand="block">Volver a Iniciar Sesion</ion-button>
 
 
   </ion-card>

@@ -1,4 +1,4 @@
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router,NavigationExtras } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class PreguntaPage implements OnInit {
 
   public usuario!: Usuario;
-  public respuesta: string = '';
+  public respuestaSecreta: string = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -34,8 +34,14 @@ export class PreguntaPage implements OnInit {
   }
 
   public validarRespuestaSecreta(): void {
-    if (this.usuario.respuestaSecreta === this.respuesta) {
-      this.router.navigate(['/correcto']);
+    const usuario = new Usuario('', '', '', '', '');
+    const usuarioEncontrado = usuario.buscarUsuarioPorRespuesta(this.respuestaSecreta);
+    if (this.usuario.respuestaSecreta === this.respuestaSecreta) {
+      const navigationExtras: NavigationExtras = {
+        state: {
+          usuario: usuarioEncontrado
+        }}
+      this.router.navigate(['/correcto'], navigationExtras);
 
       // alert('CORRECTO!!! TU CLAVE ES ' + this.usuario.password);
     }

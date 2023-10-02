@@ -9,17 +9,29 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./correcto.page.scss'],
 })
 export class CorrectoPage implements OnInit {
-  public usuario: Usuario = new Usuario('', '', '', '', '');
 
+  public usuario!: Usuario;
+  
   constructor(
-    private navCtrl: NavController
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
 
-    , private activeroute: ActivatedRoute
-    , private router: Router
-  ) { }
+    )
+  {
+
+
+    this.activatedRoute.queryParams.subscribe(params => {
+      const currentNavigation = this.router.getCurrentNavigation();
+      if (currentNavigation && currentNavigation.extras.state) {
+        this.usuario = currentNavigation.extras.state["usuario"];
+      } else {
+        this.router.navigate(['/login']);
+      }
+    });
+  }
 
   ngOnInit() {
-    this.usuario.password = '1234';
+    
   }
   public regresarLogin(): void {
     this.router.navigate(['/ingreso']);
