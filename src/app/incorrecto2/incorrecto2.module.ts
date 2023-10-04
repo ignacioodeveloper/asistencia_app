@@ -4,20 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PreguntaPageRoutingModule } from './pregunta-routing.module';
+import { Incorrecto2PageRoutingModule } from './incorrecto2-routing.module';
 
-import { PreguntaPage } from './pregunta.page';
-
+import { Incorrecto2Page } from './incorrecto2.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PreguntaPageRoutingModule,
-   
+    Incorrecto2PageRoutingModule
   ],
-  declarations: [PreguntaPage],
-  
+  declarations: [Incorrecto2Page]
 })
-export class PreguntaPageModule {}
+export class Incorrecto2PageModule {}

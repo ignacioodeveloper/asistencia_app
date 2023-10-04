@@ -34,6 +34,18 @@ const routes: Routes = [
     path: 'miclase',
     loadChildren: () => import('./miclase/miclase.module').then( m => m.MiclasePageModule)
   },
+  {
+    path: 'correcto2',
+    loadChildren: () => import('./correcto2/correcto2.module').then( m => m.Correcto2PageModule)
+  },
+  {
+    path: 'incorrecto2',
+    loadChildren: () => import('./incorrecto2/incorrecto2.module').then( m => m.Incorrecto2PageModule)
+  },
+  {
+    path: 'pregunta2',
+    loadChildren: () => import('./pregunta2/pregunta2.module').then( m => m.Pregunta2PageModule)
+  },
 
 ];
 

@@ -16,14 +16,14 @@ export class Usuario {
   }
 
   public listaUsuariosValidos(): Usuario[] {
-    const lista = [];
-    lista.push(new Usuario('atorres@duocuc.cl', '1234', 'Ana Torres Leiva'
+    const lista1 = [];
+    lista1.push(new Usuario('atorres@duocuc.cl', '1234', 'Ana Torres Leiva'
       , '¿Cuál es tu animal favorito?', 'gato'));
-    lista.push(new Usuario('jperez@duocuc.cl', '5678', 'Juan Pérez González'
+    lista1.push(new Usuario('jperez@duocuc.cl', '5678', 'Juan Pérez González'
       , '¿Cuál es tu postre favorito?', 'panqueques'));
-    lista.push(new Usuario('cmujica@duocuc.cl', '0987', 'Carla Mujica Sáez'
+    lista1.push(new Usuario('cmujica@duocuc.cl', '0987', 'Carla Mujica Sáez'
       , '¿Cuál es tu vehículo favorito?', 'moto'));
-    return lista;
+    return lista1;
   }
 
 

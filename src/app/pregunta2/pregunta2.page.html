@@ -7,34 +7,23 @@
   <ion-card color="light" class="ion-padding" >
     <ion-card-title color="tertiary" 
     class="ion-text-center ion-padding">Responde la Pregunta Secreta</ion-card-title>
-<!--     
-    <ion-list>
-      <ion-item *ngFor="let preguntaSecreta of lista1">
-        {{ preguntaSecreta }}
+    
+    <!-- <ion-list>
+      <ion-item *ngFor="let usuario of Usuario ">
+        {{ usuario.nombre }} 
       </ion-item>
     </ion-list> -->
-
-
     <!-- <ion-item>
       <ion-input label="Ingresa tu Respuesta" class="ion-padding" [(ngModel)]="respuesta"   labelPlacement="floating" fill="outline" ></ion-input>
 
     </ion-item> -->
-    
 
-
-    <!-- <ion-item>
+    <ion-item>
       <ion-input label="Ingresa tu Respuesta"  [(ngModel)]="respuesta" labelPlacement="floating" fill="outline"></ion-input>
-    </ion-item> -->
-    
-
-    <ion-card-subtitle>Ingresa tu respuesta</ion-card-subtitle>
-      <ion-input type="text" [(ngModel)]="respuesta" placeholder="Ingresa tu correo"></ion-input>
-      <a (click)="validarRespuestaSecreta1()">Recuperar contraseña</a>
+    </ion-item>
 
 
-
-
-    <!-- <ion-button (click)="validarRespuestaSecreta1()" class="ion-padding" color="tertiary"  expand="block">Ver Contraseña</ion-button> -->
+    <ion-button (click)="validarRespuestaSecreta()" class="ion-padding" color="tertiary"  expand="block">Ver Contraseña</ion-button>
     <!-- <ion-card-subtitle 
     (click)="regresarCorreo()" 
     class="ion-text-center ion-padding" color="tertiary">Volver a ingresar Correo</ion-card-subtitle> -->
@@ -47,4 +36,3 @@
 
 
 </ion-content>
-
