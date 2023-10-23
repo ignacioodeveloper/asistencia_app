@@ -33,8 +33,7 @@
 <ion-content>
 
 
-</ion-content>
-
+  <!-- qrcapturado redirigue a mi clase al escanear el qr -->
   <app-qr [hidden]="componente_actual !== 'qr'" (qrCapturado)="cambiarComponente('miclase')"></app-qr>
 
   <app-miclase [hidden]="componente_actual !== 'miclase' "></app-miclase>
@@ -43,6 +42,7 @@
 
   <app-misdatos [hidden]="componente_actual !== 'misdatos' "> </app-misdatos>
 
+</ion-content>
 
 <ion-footer>
 

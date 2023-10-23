@@ -1,1 +1,45 @@
 
+<ion-header [translucent]="true">
+  <div id="img_logo_duoc_prop">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"></ion-img>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding" id="mi-pagina">
+  <div>
+    <h1 class="ion-text-center-bv">Bienvenido/a </h1>
+    <h2 class="ion-text-start" #nombre *ngIf="usuario">{{ usuario.nombre }}</h2>
+  </div>
+
+
+  <ion-button class="ion-padding" color="tertiary" 
+  *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="qr-code-outline"></ion-icon>
+    Escanear QR
+  </ion-button>
+
+  <ion-button class="ion-padding" color="tertiary"
+    *ngIf="escaneando && plataforma === 'web'" (click)="detenerEscaneoQR()" expand="full" shape="round">
+    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+    Detener escaneo de QR
+  </ion-button>
+
+  <ion-text class="ion-text-center-esc">
+    <h5>Escanea el codigo QR para registrar tu asistencia a clases</h5>
+  </ion-text>
+
+  <video class="ion-padding" #video [hidden]="!escaneando" width="100%"></video>
+  <canvas #canvas hidden></canvas>
+
+
+
+
+
+
+
+
+
+
+
+</ion-content>
+

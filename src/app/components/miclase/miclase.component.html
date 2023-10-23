@@ -1,3 +1,64 @@
-<p>
-  miclase works!
-</p>
+
+<ion-content class="ion-padding" id="mi-pagina">
+
+
+
+  <ion-card>
+    <ion-card-header>
+      <h3>Datos:</h3>
+    </ion-card-header>
+
+    <ion-card-content class="borde">
+      <table>
+        <tr>
+          <td>Bloque de inicio:</td>
+          <td *ngIf="asistencia.bloqueTermino > 0">{{ asistencia.bloqueInicio }}</td>
+        </tr>
+        <tr>
+          <td>Bloque de término:</td>
+          <td>{{ asistencia.bloqueTermino }}</td>
+        </tr>
+        <tr>
+          <td>Día:</td>
+          <td>{{ asistencia.dia }}</td>
+        </tr>
+        <tr>
+          <td>Hora de término:</td>
+          <td>{{ asistencia.horaFin }}</td>
+        </tr>
+        <tr>
+          <td>Hora de inicio:</td>
+          <td>{{ asistencia.horaInicio }}</td>
+        </tr>
+        <tr>
+          <td>Código de asignatura:</td>
+          <td>{{ asistencia.idAsignatura }}</td>
+        </tr>
+        <tr>
+          <td>Nombre de asignatura:</td>
+          <td>{{ asistencia.nombreAsignatura }}</td>
+        </tr>
+        <tr>
+          <td>Nombre de Profesor:</td>
+          <td>{{ asistencia.nombreProfesor }}</td>
+        </tr>
+        <tr>
+          <td>Sección:</td>
+          <td>{{ asistencia.seccion }}</td>
+        </tr>
+        <tr>
+          <td>Sede:</td>
+          <td>{{ asistencia.sede }}</td>
+        </tr>
+      </table>
+    </ion-card-content>
+
+  </ion-card>
+
+
+
+
+
+
+</ion-content>
+
