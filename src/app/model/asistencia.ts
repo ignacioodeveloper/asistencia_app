@@ -48,4 +48,36 @@ export class Asistencia {
     this.sede = sede;
   }
 
+  obtenerAsistenciaDesdeQR(datosQR: string) {
+    if (this.verificarAsistenciaDesdeQR(datosQR)) {
+      return JSON.parse(datosQR) as Asistencia;
+    }
+    return new Asistencia();
+  }
+
+  verificarAsistenciaDesdeQR(datosQR: string) {
+    if (datosQR !== '') {
+      try {
+        const json = JSON.parse(datosQR);
+        // Devolver verdadero si el texto del QR contiene todos los datos de
+        // una asistencia, de lo contrario se ha escaneado un QR que a lo 
+        // mejor es válido, pero es de otra cosa que no es una asistencia.
+        if (json.bloqueInicio !== undefined
+          && json.bloqueTermino !== undefined
+          && json.dia !== undefined
+          && json.horaFin !== undefined
+          && json.horaInicio !== undefined
+          && json.idAsignatura !== undefined
+          && json.nombreAsignatura !== undefined
+          && json.nombreProfesor !== undefined
+          && json.seccion !== undefined
+          && json.sede !== undefined
+          ) {
+          return true;
+        }
+      } catch(error: any) {}
+    }
+    return false;
+  }
+
 }

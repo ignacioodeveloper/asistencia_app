@@ -77,7 +77,22 @@ echo.
 echo.
 
 echo ******************************************
+echo npm i jeep-sqlite --save
+echo ******************************************
+call npm i jeep-sqlite --save
+echo.
+echo.
+
+echo ******************************************
+echo npm install --save sql.js
+echo ******************************************
+call npm install --save sql.js
+echo.
+echo.
+
+echo ******************************************
 echo ng add @angular/material
 echo ******************************************
 call ng add @angular/material
+echo.
 echo.

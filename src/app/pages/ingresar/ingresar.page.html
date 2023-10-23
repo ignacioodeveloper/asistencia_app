@@ -1,0 +1,40 @@
+<ion-header class="ion-padding ion-no-border ion-text-center width=50px ">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg">
+</ion-header>
+<br>
+<br>
+<br>
+<ion-content [fullscreen]="true">
+
+  <ion-card id="tarjeta-menu" color="light" class="ion-padding">
+
+    <ion-card-title color="primary" class="ion-text-center ion-padding ">
+      <ion-text>Bienvenido al nuevo sistema de asistencia</ion-text>
+      <br>
+      <br>
+      <ion-item id="custom-item">
+        <ion-input [(ngModel)]="correo" type="text" label="Correo" labelPlacement="floating"></ion-input>
+
+
+      </ion-item>
+      <ion-item id="custom-item">
+        <ion-input [(ngModel)]="password" type="password" label="Contraseña" labelPlacement="floating"></ion-input>
+
+      </ion-item>
+
+      <ion-button (click)="ingresar()"  class="ion-padding" color="warning"  expand="block">
+        Ingresar
+      </ion-button>
+
+    </ion-card-title>
+
+    <ion-card-subtitle class="ion-text-center ion-pading" color="primary">
+      ¿Olvidaste tu contraseña?
+    </ion-card-subtitle>
+
+  </ion-card>
+
+</ion-content>
+<ion-footer id="footer-id" class="ion-padding ion-text-center">
+Aplicación creada por: Luis, Matias, Joaquin, Benjamin
+</ion-footer>

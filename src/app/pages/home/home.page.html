@@ -1,0 +1,54 @@
+<ion-header >
+  <ion-toolbar class="ion-padding ">
+    <ion-title>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg">
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-segment  [(ngModel)]="componente_actual"  (ngModelChange)="cambiarComponente($event)">
+
+      <ion-segment-button value="qr">
+        <ion-label>QR</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="misdatos">
+        <ion-label>Mis Datos</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="miclase">
+        <ion-label>Mi clase</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="foro">
+        <ion-label>foro</ion-label>
+      </ion-segment-button>
+
+    </ion-segment>
+  </ion-toolbar>
+
+
+</ion-header>
+
+<ion-content>
+
+
+</ion-content>
+
+  <app-qr [hidden]="componente_actual !== 'qr'" (qrCapturado)="cambiarComponente('miclase')"></app-qr>
+
+  <app-miclase [hidden]="componente_actual !== 'miclase' "></app-miclase>
+
+  <app-foro [hidden]="componente_actual !== 'foro' "></app-foro>
+
+  <app-misdatos [hidden]="componente_actual !== 'misdatos' "> </app-misdatos>
+
+
+<ion-footer>
+
+  <ion-toolbar>
+    <ion-button (click)="cerrarSesion()" expand="block" fill="clear" shape="round">
+      Cerrar sesión
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
