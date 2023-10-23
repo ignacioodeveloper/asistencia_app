@@ -1,13 +1,35 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>correo</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding-horizontal">
+  <div class="ion-padding">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"></ion-img>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">correo</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  </div>
+
+  <ion-card id="tarjeta-menu" color="light" class="ion-padding" >
+    <ion-card-title color="tertiary" 
+    class="ion-text-center ion-padding">Ingresa tu Correo para recuperar la contraseña</ion-card-title>
+    
+    <ion-item>
+    
+      <ion-input [(ngModel)]="correo" 
+      label="Correo Electronico" class="ion-padding" 
+      
+      type="text" labelPlacement="floating" ></ion-input>
+
+    </ion-item>
+    
+
+    <ion-button (click)="ingresarPaginaValidarRespuestaSecreta()"class="ion-padding" color="tertiary"  expand="block">Continuar</ion-button>
+
+    <ion-card-subtitle 
+    (click)="regresarLogin()" 
+    class="ion-text-center ion-padding" color="tertiary">Volver a Iniciar Sesion</ion-card-subtitle>
+
+
+  </ion-card>
+
+  
+
+
+
 </ion-content>
+

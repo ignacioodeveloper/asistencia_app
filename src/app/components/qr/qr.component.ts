@@ -14,6 +14,7 @@ import jsQR, { QRCode } from 'jsqr';
 import { BarcodeFormat, BarcodeScanner, ScanResult } from '@capacitor-mlkit/barcode-scanning';
 import { MessageEnum } from 'src/app/tools/message-enum';
 
+import { Animation, AnimationController} from '@ionic/angular';
 
 @Component({
   selector: 'app-qr',
@@ -23,6 +24,7 @@ import { MessageEnum } from 'src/app/tools/message-enum';
   standalone: true,
 })
 export class QrComponent  implements OnInit {
+  @ViewChild('nombre', { read: ElementRef }) itemNombre!: ElementRef;
 
   @ViewChild('video') private video!: ElementRef;
   @ViewChild('canvas') private canvas!: ElementRef;
@@ -39,7 +41,9 @@ export class QrComponent  implements OnInit {
     private authService: AuthService,
     private bd: DataBaseService,
     private sqliteService: SqliteService,
-    private readonly ngZone: NgZone
+    private readonly ngZone: NgZone,
+    private animationController: AnimationController
+
   ) { }
 
   ngOnInit() {
@@ -47,6 +51,19 @@ export class QrComponent  implements OnInit {
     this.authService.usuarioAutenticado.subscribe((usuario) => {
       this.usuario = usuario? usuario : new Usuario();
     });
+  }
+
+  public ngAfterViewInit(): void {
+    if (this.itemNombre) {
+      const animation = this.animationController
+        .create()
+        .addElement(this.itemNombre.nativeElement)
+        .iterations(Infinity)
+        .duration(3000)
+        .fromTo('transform', 'translate(0%)', 'translate(100%)')
+
+      animation.play();
+    }
   }
 
   async comenzarEscaneoQR() {

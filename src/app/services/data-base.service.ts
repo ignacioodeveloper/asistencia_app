@@ -67,7 +67,14 @@ export class DataBaseService {
     const usuarios: Usuario[] = (await this.db.query('SELECT * FROM USUARIO WHERE correo=?;', [correo])).values as Usuario[];
     return usuarios[0];
   }
-  
+
+  async leerUsuarioRespuesta(respuestaSecreta: string): Promise<Usuario | undefined> {
+    const usuarios: Usuario[] = 
+    (await this.db.query('SELECT * FROM USUARIO WHERE respuestaSecreta=?;', [respuestaSecreta])).values as Usuario[];
+    return usuarios[0];
+  }
+
+
   async eliminarUsuarioUsandoCorreo(correo: string) {
     await this.db.run('DELETE FROM USUARIO WHERE correo=?', [correo]);
     await this.leerUsuarios();

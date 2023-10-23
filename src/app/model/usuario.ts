@@ -18,6 +18,9 @@ export class Usuario {
     this.respuestaSecreta = respuestaSecreta;
   }
 
+  
+
+
   static getUsuario(correo: string, password: string, nombre: string, apellido: string, preguntaSecreta: string, respuestaSecreta: string) {
     const usu = new Usuario();
     usu.setUsuario(correo, password, nombre, apellido, preguntaSecreta, respuestaSecreta)

@@ -10,13 +10,17 @@ ion-content {
 
 }
 
-#custom-item{
-  border-radius: 5px;
-}
+
 
 #footer-id{
   font-size: xx-small;
   font-style: italic;
+}
+
+
+.ion-padding {
+  --padding: var(--ion-padding, 25px);
+  padding: var(--ion-padding, 25px);
 }
 
 

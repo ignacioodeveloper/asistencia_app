@@ -1,40 +1,32 @@
-<ion-header class="ion-padding ion-no-border ion-text-center width=50px ">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg">
-</ion-header>
-<br>
-<br>
-<br>
-<ion-content [fullscreen]="true">
+
+<ion-content [fullscreen]="true"  class="ion-padding-horizontal">
+
+  <div class="ion-padding">
+    <ion-img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Logo_DuocUC.svg"></ion-img>
+  </div>
 
   <ion-card id="tarjeta-menu" color="light" class="ion-padding">
+    <ion-card-title color="tertiary" class="ion-text-center ion-padding">¡Bienvenido al nuevo sistema de asistencia!</ion-card-title>
+    <ion-item>
+      <ion-input label="Correo" class="ion-padding" [(ngModel)]="correo"  type="text" labelPlacement="floating"></ion-input>
+    </ion-item>
 
-    <ion-card-title color="primary" class="ion-text-center ion-padding ">
-      <ion-text>Bienvenido al nuevo sistema de asistencia</ion-text>
-      <br>
-      <br>
-      <ion-item id="custom-item">
-        <ion-input [(ngModel)]="correo" type="text" label="Correo" labelPlacement="floating"></ion-input>
+    <ion-item>
+      <ion-input label="Contraseña" class="ion-padding" [(ngModel)]="password" type="password" labelPlacement="floating" placeholder="Ingrese su contraseña"></ion-input>
+
+    </ion-item>
 
 
-      </ion-item>
-      <ion-item id="custom-item">
-        <ion-input [(ngModel)]="password" type="password" label="Contraseña" labelPlacement="floating"></ion-input>
+    <ion-button (click)="ingresar()" class="ion-padding" color="tertiary"  expand="block">Ingresar</ion-button>
 
-      </ion-item>
-
-      <ion-button (click)="ingresar()"  class="ion-padding" color="warning"  expand="block">
-        Ingresar
-      </ion-button>
-
-    </ion-card-title>
-
-    <ion-card-subtitle class="ion-text-center ion-pading" color="primary">
-      ¿Olvidaste tu contraseña?
-    </ion-card-subtitle>
+    <ion-card-subtitle
+    (click)="ingresarPaginaValidarCorreo()"
+    class="ion-text-center ion-padding" color="tertiary">¿Olvidaste tu contraseña?</ion-card-subtitle>
 
   </ion-card>
 
 </ion-content>
 <ion-footer id="footer-id" class="ion-padding ion-text-center">
-Aplicación creada por: Luis, Matias, Joaquin, Benjamin
+  
+Aplicación creada por: Benjamin, Joaquin, Matias, Luis
 </ion-footer>
