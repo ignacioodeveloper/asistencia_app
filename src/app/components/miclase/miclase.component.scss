@@ -1,0 +1,17 @@
+.image-container {
+  position: relative;
+}
+
+.image-text {
+  position: absolute;
+  text-align: center;
+  bottom: 50%; /* Ajusta la posición vertical del texto */
+  left: 25%;   /* Ajusta la posición horizontal del texto */
+  color: white; /* Cambia el color del texto */
+
+}
+
+// ion-card {
+//   color: white;
+//   background-color: #1A1A1A;
+// }

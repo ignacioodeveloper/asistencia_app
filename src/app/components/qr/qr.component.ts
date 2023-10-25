@@ -15,12 +15,13 @@ import { BarcodeFormat, BarcodeScanner, ScanResult } from '@capacitor-mlkit/barc
 import { MessageEnum } from 'src/app/tools/message-enum';
 
 import { Animation, AnimationController} from '@ionic/angular';
+import { HomePage } from 'src/app/pages/home/home.page';
 
 @Component({
   selector: 'app-qr',
   templateUrl: './qr.component.html',
   styleUrls: ['./qr.component.scss'],
-  imports: [IonicModule, CommonModule, FormsModule],
+  imports: [IonicModule, CommonModule, FormsModule, HomePage],
   standalone: true,
 })
 export class QrComponent  implements OnInit {

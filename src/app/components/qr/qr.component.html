@@ -11,8 +11,9 @@
 
   <ion-button class="ion-padding" color="tertiary" 
   *ngIf="!escaneando" (click)="comenzarEscaneoQR()" expand="full" shape="round">
-    <ion-icon name="qr-code-outline" slot="start" color="danger"></ion-icon>
-    <ion-icon name="qr-code-outline"></ion-icon>
+    <span class="material-symbols-outlined ion-padding-horizontal">
+    qr_code_scanner
+    </span>
     Escanear QR
   </ion-button>
 
@@ -20,14 +21,16 @@
 
   <ion-button class="ion-padding" color="danger" 
   *ngIf="escaneando && plataforma === 'web'" (click)="detenerEscaneoQR()" expand="full" shape="round">
-    <ion-icon slot="start" name="stop-circle-outline"></ion-icon>
+    <span class="material-symbols-outlined ion-padding-horizontal">
+      radio_button_checked
+      </span>
     Detener escaneo de QR
   </ion-button>
 
 
 
-  <ion-text class="ion-text-center-esc">
-    <h5>Escanea el codigo QR para registrar tu asistencia a clases</h5>
+  <ion-text class="ion-text-center">
+    <h5>Escanea el código QR para registrar tu asistencia a clases</h5>
   </ion-text>
 
   <video class="ion-padding" #video [hidden]="!escaneando" width="100%"></video>

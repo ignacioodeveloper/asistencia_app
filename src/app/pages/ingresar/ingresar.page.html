@@ -6,18 +6,25 @@
   </div>
 
   <ion-card id="tarjeta-menu" color="light" class="ion-padding">
+    
     <ion-card-title color="tertiary" class="ion-text-center ion-padding">¡Bienvenido al nuevo sistema de asistencia!</ion-card-title>
-    <ion-item>
-      <ion-input label="Correo" class="ion-padding" [(ngModel)]="correo"  type="text" labelPlacement="floating"></ion-input>
-    </ion-item>
 
-    <ion-item>
-      <ion-input label="Contraseña" class="ion-padding" [(ngModel)]="password" type="password" labelPlacement="floating" placeholder="Ingrese su contraseña"></ion-input>
+      <ion-input 
+      label="Correo" class="ion-padding" [(ngModel)]="correo"  
+      type="text" labelPlacement="floating"></ion-input>
 
-    </ion-item>
+      <ion-input [clearInput]="true"
+      label="Contraseña" class="ion-padding"
+       [(ngModel)]="password" type="password" 
+       size="large"
+       labelPlacement="floating" placeholder="Ingrese su contraseña"></ion-input>
 
 
-    <ion-button (click)="ingresar()" class="ion-padding" color="tertiary"  expand="block">Ingresar</ion-button>
+
+
+    <ion-button  (click)="ingresar()" class="ion-padding" color="tertiary" 
+    shape="round" 
+    expand="block">Ingresar</ion-button>
 
     <ion-card-subtitle
     (click)="ingresarPaginaValidarCorreo()"

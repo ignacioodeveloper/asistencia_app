@@ -5,30 +5,32 @@
     </ion-title>
   </ion-toolbar>
 
-  <ion-toolbar>
-    <ion-segment  [(ngModel)]="componente_actual"  (ngModelChange)="cambiarComponente($event)">
 
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="componente_actual"  (ngModelChange)="cambiarComponente($event)"  >
+  
       <ion-segment-button value="qr">
         <ion-label>QR</ion-label>
       </ion-segment-button>
-
+  
       <ion-segment-button value="misdatos">
         <ion-label>Mis Datos</ion-label>
       </ion-segment-button>
-
+  
       <ion-segment-button value="miclase">
         <ion-label>Mi clase</ion-label>
       </ion-segment-button>
-
+  
       <ion-segment-button value="foro">
         <ion-label>foro</ion-label>
       </ion-segment-button>
-
+  
     </ion-segment>
   </ion-toolbar>
 
 
 </ion-header>
+
 
 <ion-content>
 
@@ -47,8 +49,10 @@
 <ion-footer>
 
   <ion-toolbar>
-    <ion-button (click)="cerrarSesion()" expand="block" fill="clear" shape="round">
+    <ion-button color="danger" (click)="cerrarSesion()" expand="block" fill="clear" shape="round">
       Cerrar sesión
     </ion-button>
   </ion-toolbar>
 </ion-footer>
+
+

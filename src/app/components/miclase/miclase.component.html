@@ -1,64 +1,71 @@
 
 <ion-content class="ion-padding" id="mi-pagina">
+  <ion-list-header>
+    <ion-label color="tertyary">
+      Registro de Asistencia
+    </ion-label>
+  </ion-list-header>
+
+  <ion-card class="apps-card">
+
+      <div class="image-container">
+        <img style="height: 130px; width: 500px;" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Palacio_Eguiguren%2C_Santiago_20210807_36.jpg"/>
+
+        <ion-card-title class="ion-text-center image-text">
+          {{ asistencia.sede }}
+        </ion-card-title>
+        
+
+      </div>
 
 
 
-  <ion-card>
-    <ion-card-header>
-      <h3>{{ asistencia.nombreAsignatura }}</h3>
+    <ion-card-header class="ion-text-center">
 
-      <h3>Registro Asistencia:</h3>
+      <ion-card-subtitle>{{ asistencia.idAsignatura }}</ion-card-subtitle>
+      <ion-card-subtitle>{{ asistencia.seccion }}</ion-card-subtitle>
+
+      <ion-card-title>{{ asistencia.nombreAsignatura }}</ion-card-title>
     </ion-card-header>
 
-    <ion-card-content class="borde">
-      <table>
+    <ion-card-content class="ion-text-center">
+      <ion-chip>
+        <ion-avatar>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjYzVkYmZmIiBkPSJNMCAwaDUxMnY1MTJIMHoiLz48cGF0aCBkPSJNMjU2IDMwNGM2MS42IDAgMTEyLTUwLjQgMTEyLTExMlMzMTcuNiA4MCAyNTYgODBzLTExMiA1MC40LTExMiAxMTIgNTAuNCAxMTIgMTEyIDExMnptMCA0MGMtNzQuMiAwLTIyNCAzNy44LTIyNCAxMTJ2NTZoNDQ4di01NmMwLTc0LjItMTQ5LjgtMTEyLTIyNC0xMTJ6IiBmaWxsPSIjODJhZWZmIi8+PC9zdmc+" />
+        </ion-avatar>
+        <ion-label>{{ asistencia.nombreProfesor }}</ion-label>
+      </ion-chip>
+
+      <table class="ion-text-center">
         <tr>
-          <td>Bloque de inicio:</td>
+          <td>Bloque de inicio </td>
           <td *ngIf="asistencia.bloqueTermino > 0">{{ asistencia.bloqueInicio }}</td>
         </tr>
         <tr>
-          <td>Bloque de término:</td>
+          <td>Bloque de término </td>
           <td>{{ asistencia.bloqueTermino }}</td>
         </tr>
-        <tr>
-          <td>Día:</td>
-          <td>{{ asistencia.dia }}</td>
-        </tr>
-        <tr>
-          <td>Hora de término:</td>
-          <td>{{ asistencia.horaFin }}</td>
-        </tr>
-        <tr>
-          <td>Hora de inicio:</td>
-          <td>{{ asistencia.horaInicio }}</td>
-        </tr>
-        <tr>
-          <td>Código de asignatura:</td>
-          <td>{{ asistencia.idAsignatura }}</td>
-        </tr>
-        <tr>
-          <td>Nombre de asignatura:</td>
-          <td>{{ asistencia.nombreAsignatura }}</td>
-        </tr>
-        <tr>
-          <td>Nombre de Profesor:</td>
-          <td>{{ asistencia.nombreProfesor }}</td>
-        </tr>
-        <tr>
-          <td>Sección:</td>
-          <td>{{ asistencia.seccion }}</td>
-        </tr>
-        <tr>
-          <td>Sede:</td>
-          <td>{{ asistencia.sede }}</td>
-        </tr>
-      </table>
-    </ion-card-content>
 
+
+
+
+
+
+      </table>
+  
+    </ion-card-content>
   </ion-card>
 
+  <ion-card color="light" class="ion-text-center">
+    <ion-card-header>
+      <ion-card-title>{{ asistencia.dia }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-title>{{ asistencia.horaInicio }} {{ asistencia.horaFin }}</ion-card-title>
+    </ion-card-content>
 
 
+  </ion-card>
 
 
 

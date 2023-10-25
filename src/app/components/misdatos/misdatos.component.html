@@ -1,42 +1,58 @@
-<div class="marco">
 
-  <ion-item>
-    <ion-input type="text" [(ngModel)]="usuario.correo" label="Correo" labelPlacement="floating" disabled="true"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input type="text" [(ngModel)]="usuario.nombre" label="Nombre" labelPlacement="floating"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input type="text" [(ngModel)]="usuario.apellido" label="Apellidos" labelPlacement="floating"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input type="text" [(ngModel)]="usuario.preguntaSecreta" label="Pregunta secreta" labelPlacement="floating"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input type="text" [(ngModel)]="usuario.respuestaSecreta" label="Respuesta secreta" labelPlacement="floating"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input type="password" [(ngModel)]="usuario.password" label="Contraseña" labelPlacement="floating"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-input type="password" [(ngModel)]="repeticionPassword" label="Repetir contraseña" labelPlacement="floating"></ion-input>
-  </ion-item>
-
-  <br>
-
-  <ion-button class="ion-padding" color="tertiary" 
-  (click)="actualizarPerfil()" expand="full" shape="round">
-    <ion-icon name="qr-code-outline" slot="start" color="danger"></ion-icon>
-
-    Guardar Datos
-  </ion-button>
-
-
-
-</div>
+<ion-content class="ion-padding">
+  <ion-list-header>
+    <ion-label color="tertyary">
+      Editar Mis Datos  
+    </ion-label>
+    <ion-chip>
+      <ion-avatar>
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjYzVkYmZmIiBkPSJNMCAwaDUxMnY1MTJIMHoiLz48cGF0aCBkPSJNMjU2IDMwNGM2MS42IDAgMTEyLTUwLjQgMTEyLTExMlMzMTcuNiA4MCAyNTYgODBzLTExMiA1MC40LTExMiAxMTIgNTAuNCAxMTIgMTEyIDExMnptMCA0MGMtNzQuMiAwLTIyNCAzNy44LTIyNCAxMTJ2NTZoNDQ4di01NmMwLTc0LjItMTQ5LjgtMTEyLTIyNC0xMTJ6IiBmaWxsPSIjODJhZWZmIi8+PC9zdmc+" />
+      </ion-avatar>
+      <ion-label>{{ usuario.nombre }} {{ usuario.apellido }}</ion-label>
+    </ion-chip>
+  </ion-list-header>
+  
+  
+  <div class="marco">
+  
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="usuario.correo" label="Correo" labelPlacement="floating" disabled="true"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="usuario.nombre" label="Nombre" labelPlacement="floating"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="usuario.apellido" label="Apellidos" labelPlacement="floating"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="usuario.preguntaSecreta" label="Pregunta secreta" labelPlacement="floating"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="usuario.respuestaSecreta" label="Respuesta secreta" labelPlacement="floating"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="usuario.password" label="Contraseña" labelPlacement="floating"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input type="password" [(ngModel)]="repeticionPassword" label="Repetir contraseña" labelPlacement="floating"></ion-input>
+    </ion-item>
+  
+    <br>
+  
+    <ion-button class="ion-padding" color="tertiary" 
+    (click)="actualizarPerfil()" expand="full" shape="round">
+      <ion-icon name="qr-code-outline" slot="start" color="danger"></ion-icon>
+  
+      Guardar Datos
+    </ion-button>
+  
+  
+  
+  </div>
+</ion-content>
